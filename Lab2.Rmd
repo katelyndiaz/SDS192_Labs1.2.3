@@ -1,0 +1,74 @@
+---
+title: "Lab2"
+author: "Katelyn Diaz"
+date: "`r Sys.Date()`"
+output: openintro::lab_report
+---
+
+```{r load-packages, message=FALSE}
+library(tidyverse)
+library(openintro)
+```
+
+### Exercise 1
+##### Visual cues:
+- x-axis is the scale of the average wage in various industry.
+- y-axis is based on percent change in specific industry in 2007
+- color indicated the direction of that change: red means not recovered, green has recovered.
+- intensity of the color corresponds to to the state of recovery as well, on a scale.
+- "scatter plot of line graphs"
+
+##### Coordinate system:
+- Cartesian coordinate system. The x-axis is the scale of wage per industry, and the y-axis is the number of people working in that industry. 
+
+##### Scales:
+- Data is scaled to each industry. Scales seem to be numeric and linear upon clicking on the interactive graph. 
+
+##### Context:
+How industries changed following the 2008 recession. Published by the NYT for a wide audience. 6-7 years after the recession, so looking at long term economic effects. 
+
+##### Mapping between variables and visual cues:
+- see visual clues
+
+### Exercise 2
+##### Visual cues:
+- Length of the arrow corresponds with number of votes
+- color of arrow corresponds with political party
+- position provides insight into what district it is in (House district)
+- direction of the arrow, depending on political party
+
+##### Coordinate System:
+- Latitude and longitude (not specifically  defined, but implied). Map of the US.
+
+##### Scales:
+Scale of arrow per vote change is provided
+
+##### Context:
+Provided by titles. Published in 2010 in the NYT (broad reader), looking at the 2008 election, so looking at the midterms in comparison to the 2008 election. Tracking responses to Obama, as shown in the interactive, but not the static, visualization. Some cities and specific districts are labeled, providing additional context in blurbs regarding key areas. 
+
+### Exercise 3
+
+##### Visual cues:
+- color hue indicates subprime mortgages as a percentage of all mortgages
+- height shows mortgage foreclosures as a percentage of all mortgages in the metropolitan area 
+- size of the bar indicates region
+
+##### Coordinate System:
+Geographic coordinate system, as it is on a map
+
+##### Scales:
+It appears to be a numeric scale due to the percentages
+
+##### Context:
+Provided by article. Subprime mortgages are mortgages issued to those with low credit. This visualization mapped the impact of the mortage squeeze on different regions. Darker color indicates the region is doing worse (having overall lower credit scores, causing an increase in subprime mortgages). Once again, broad audience in the US from the NYT, and a large number of people would care about it because it directly impacts them. 
+
+
+
+
+
+
+
+
+
+
+
