@@ -1,6 +1,6 @@
 ---
-title: "Lab Name"
-author: "Author Name"
+title: "ColorBrewerLab3"
+author: "Katelyn Diaz"
 date: "`r Sys.Date()`"
 output: openintro::lab_report
 ---
@@ -8,17 +8,61 @@ output: openintro::lab_report
 ```{r load-packages, message=FALSE}
 library(tidyverse)
 library(openintro)
+library(RColorBrewer)
+glimpse(ToothGrowth)
+# summary(ToothGrowth)
+display.brewer.all()
 ```
 
-### Exercise 1
+### Exercise 1:
+##### Make a boxplot of the ToothGrowth data, with x = dose, y = len, and fill = dose. Store it in a variable called my_plot.
 
-Insert any text here.
 
-```{r code-chunk-label}
+```{r message = FALSE,  }
 # Insert code for Exercise 1 here
+
+ToothGrowth <- ToothGrowth %>%
+  mutate (dose = factor(dose))
+summary(ToothGrowth)
+
+
+my_plot <- ggplot(data = (ToothGrowth), aes(x=dose, y=len, fill =dose)) +
+  geom_boxplot()
+
+my_plot +
+  scale_fill_manual(values = c("#004f71", "#465a01", "#981d97"))
+
 ```
 
-### Exercise 2
 
+### Exercise 2: 
+##### Try out a few other color palettes
+```{r message = FALSE,  }
+ToothGrowth <- ToothGrowth %>%
+  mutate (dose = factor(dose))
+summary(ToothGrowth)
+
+
+my_plot <- ggplot(data = (ToothGrowth), aes(x=dose, y=len, fill =dose)) +
+  geom_boxplot()
+
+my_plot +
+  scale_fill_brewer(palette = "Set3")
+
+```
+### Exercise 2
+```{r message = FALSE,  }
+
+```
+
+
+```{r message = FALSE,  }
+
+```
+
+
+```{r message = FALSE,  }
+
+```
 ...
 
