@@ -1,6 +1,6 @@
 ---
-title: "Lab Name"
-author: "Author Name"
+title: "ColorBrewerLab3"
+author: "Katelyn Diaz"
 date: "`r Sys.Date()`"
 output: openintro::lab_report
 ---
@@ -8,17 +8,104 @@ output: openintro::lab_report
 ```{r load-packages, message=FALSE}
 library(tidyverse)
 library(openintro)
+library(RColorBrewer)
+glimpse(ToothGrowth)
+library(nasaweather)
+library(ggthemes)
+
+# summary(ToothGrowth)
+display.brewer.all()
+
+
 ```
 
-### Exercise 1
+### Exercise 1:
+##### Make a boxplot of the ToothGrowth data, with x = dose, y = len, and fill = dose. Store it in a variable called my_plot.
 
-Insert any text here.
 
-```{r code-chunk-label}
+```{r message = FALSE,  }
 # Insert code for Exercise 1 here
+
+ToothGrowth <- ToothGrowth %>%
+  mutate (dose = factor(dose))
+summary(ToothGrowth)
+
+
+my_plot <- ggplot(data = (ToothGrowth), aes(x=dose, y=len, fill =dose)) +
+  geom_boxplot()
+
+my_plot +
+  scale_fill_manual(values = c("#004f71", "#465a01", "#981d97"))
+
 ```
 
-### Exercise 2
 
+### Exercise 2: 
+##### Try out a few other color palettes
+```{r message = FALSE,  }
+ToothGrowth <- ToothGrowth %>%
+  mutate (dose = factor(dose))
+summary(ToothGrowth)
+
+
+my_plot <- ggplot(data = (ToothGrowth), aes(x=dose, y=len, fill =dose)) +
+  geom_boxplot()
+
+my_plot +
+  scale_fill_brewer(palette = "Set2")
+
+my_plot +
+  scale_fill_brewer(palette = "Oranges")
+
+my_plot +
+  scale_fill_brewer(palette = "BrBG")
+
+```
+Exercise 3: Install the nasaweather package and load it
+
+### Exercise 4:
+##### Plot the storms in my_storms, mapping horizontal position to longitude, vertical position to latitude, and color to wind speed. Also use a facet_wrap() to make small multiples according to the name of each storm.
+
+```{r message = FALSE,  }
+my_storms <- storms %>%
+    filter(year == 1995)
+
+my_storms <- ggplot(data = my_storms, aes(group = name, x=long, y=lat, color = wind)) +
+  geom_line()
+
+my_storms +
+  facet_wrap(~name) +
+  scale_fill_distiller(palette = "Blues")
+# when to use color filler vs distiller?
+# didn't display color as geom_boxplot
+```
+
+### Exercise 5:
+##### Do you think a sequential or diverging color scheme is most appropriate for wind speed? Justify your answer.
+  A sequential color scheme is just hues of the same color, while diverging are different colors. I believe sequential would be more appropriate because it is talking about one thing, and moves in one direction of total speed (you can't have negative wind strength).
+
+
+```{r message = FALSE,  }
+glimpse(ChickWeight)
+cute_chick <- ChickWeight 
+
+cute_chick <- ggplot(data = cute_chick, aes(group = Diet, x=Chick, y=weight, color = Diet)) +
+  ggtitle("Chicken weight depending on diet type") +
+  ylab("Weight of Chick") +
+  
+  geom_boxplot()
+
+cute_chick +
+  scale_fill_distiller(palette = "Blues")
+
+
+   
+
+```
+
+
+```{r message = FALSE,  }
+glimpse(ChickWeight)
+```
 ...
 
