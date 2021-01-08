@@ -1,0 +1,40 @@
+---
+title: "Graphics with ggplot"
+author: "Katelyn Diaz"
+date: "`r Sys.Date()`"
+output: openintro::lab_report
+---
+
+```{r load-packages, message=FALSE}
+library(tidyverse)
+library(openintro)
+```
+
+### Exercise 1
+##### Create a scatterplot of the value of each home in the first quarter of 2013 as a function of the value of the land.
+
+
+```{r code-chunk-label}
+# Insert code for Exercise 1 here
+```
+
+### Exercise 2
+
+```{r code-chunk-label}
+# Insert code for Exercise 1 here
+```
+
+```{r code-chunk-label}
+# Insert code for Exercise 1 here
+```
+
+```{r code-chunk-label}
+# Insert code for Exercise 1 here
+```
+
+```{r code-chunk-label}
+# Insert code for Exercise 1 here
+```
+
+...
+
